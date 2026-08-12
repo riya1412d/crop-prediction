@@ -1,0 +1,24 @@
+��      �sklearn.pipeline��Pipeline���)��}�(�steps�]�(�preprocessor��#sklearn.compose._column_transformer��ColumnTransformer���)��}�(�transformers�]�(�categorical��sklearn.preprocessing._encoders��
+OneHotEncoder���)��}�(�
+categories��auto��
+sparse_output���dtype��numpy��float64����handle_unknown��ignore��drop�N�
+min_frequency�N�max_categories�N�feature_name_combiner��concat��_sklearn_version��1.9.0�ub]�(�Crop��Region��	Soil_Type��
+Irrigation��
+Previous_Crop�e���	numerical��sklearn.preprocessing._data��StandardScaler���)��}�(�	with_mean���with_std���copy��h#h$ub]�(�Soil_pH��Rainfall_mm��
+Temperature_C��Humidity_pct��Fertilizer_Used_kg��Pesticides_Used_kg��Planting_Density�e��e�	remainder�h�sparse_threshold�G?�333333�n_jobs�N�transformer_weights�N�verbose���verbose_feature_names_out���feature_names_in_��joblib.numpy_pickle��NumpyArrayWrapper���)��}�(�subclass�h�ndarray����shape�K���order��C�hh�dtype����O8�����R�(K�|�NNNJ����J����K?t�b�
+allow_mmap���numpy_array_alignment_bytes�Kub��7      �numpy._core.multiarray��_reconstruct����numpy��ndarray���K ��Cb���R�(KK��h�dtype����O8�����R�(K�|�NNNJ����J����K?t�b�]�(�Crop��Region��	Soil_Type��Soil_pH��Rainfall_mm��
+Temperature_C��Humidity_pct��Fertilizer_Used_kg��
+Irrigation��Pesticides_Used_kg��Planting_Density��
+Previous_Crop�et�b.�      �n_features_in_�K�_columns�]�(h%h5e�_transformer_to_input_indices�}�(h]�(K KKKKeh,]�(KKKKKK	K
+eh>]�u�
+_remainder�h>h]����sparse_output_���
+transformers_�]�(hh)��}�(hhh�hhhhhNhNh Nh!h"�_infrequent_enabled��hDhG)��}�(hJhLhMK��hOhPhhUhX�hYKub���       �numpy._core.multiarray��_reconstruct����numpy��ndarray���K ��Cb���R�(KK��h�dtype����O8�����R�(K�|�NNNJ����J����K?t�b�]�(�Crop��Region��	Soil_Type��
+Irrigation��
+Previous_Crop�et�b.�8       hZK�categories_�]�(hG)��}�(hJhLhMK��hOhPhhUhX�hYKub���       �numpy._core.multiarray��_reconstruct����numpy��ndarray���K ��Cb���R�(KK��h�dtype����O8�����R�(K�|�NNNJ����J����K?t�b�]�(�Barley��Maize��Rice��Wheat�et�b.�#       hG)��}�(hJhLhMK��hOhPhhUhX�hYKub���       �numpy._core.multiarray��_reconstruct����numpy��ndarray���K ��Cb���R�(KK��h�dtype����O8�����R�(K�|�NNNJ����J����K?t�b�]�(�Region_A��Region_B��Region_C��Region_D�et�b.�#       hG)��}�(hJhLhMK��hOhPhhUhX�hYKub���       �numpy._core.multiarray��_reconstruct����numpy��ndarray���K ��Cb���R�(KK��h�dtype����O8�����R�(K�|�NNNJ����J����K?t�b�]�(�Clay��Loam��Sandy�et�b.�#       hG)��}�(hJhLhMK��hOhPhhUhX�hYKub���       �numpy._core.multiarray��_reconstruct����numpy��ndarray���K ��Cb���R�(KK��h�dtype����O8�����R�(K�|�NNNJ����J����K?t�b�]�(�Drip��Flood��	Sprinkler�et�b.�#       hG)��}�(hJhLhMK��hOhPhhUhX�hYKub���       �numpy._core.multiarray��_reconstruct����numpy��ndarray���K ��Cb���R�(KK��h�dtype����O8�����R�(K�|�NNNJ����J����K?t�b�]�(�Barley��Maize��Rice��Wheat�et�b.��       e�_drop_idx_after_grouping�N�	drop_idx_�N�_n_features_outs�]�(KKKKKeh#h$ubh%��h,h/)��}�(h2�h3�h4�hDhG)��}�(hJhLhMK��hOhPhhUhX�hYKub���       �numpy._core.multiarray��_reconstruct����numpy��ndarray���K ��Cb���R�(KK��h�dtype����O8�����R�(K�|�NNNJ����J����K?t�b�]�(�Soil_pH��Rainfall_mm��
+Temperature_C��Humidity_pct��Fertilizer_Used_kg��Pesticides_Used_kg��Planting_Density�et�b.��       hZK�n_samples_seen_��numpy._core.multiarray��scalar���hR�f8�����R�(K�<�NNNJ����J����K t�bC     @�@���R��mean_�hG)��}�(hJhLhMK��hOhPhh�hX�hYKub�����S:X@HP�v�@�� �r9@8gDioN@$(~���e@�߾��8@�S㥛�-@�*       �var_�hG)��}�(hJhLhMK��hOhPhh�hX�hYKub�����l�؈(�?)���� AP8��z�@@���
+��r@���)p:�@L�|ǿi@�g%�p�@@�,       �scale_�hG)��}�(hJhLhMK��hOhPhh�hX�hYKub��u��7f�?�|�Pw@\�8�@_>YL1@�O���Q@�AU�u�,@P�fC@�      h#h$ubh5��e�output_indices_�}�(h�builtins��slice���K KN��R�h,h�KKN��R�h>h�K K N��R�uh#h$ub���model��sklearn.linear_model._base��LinearRegression���)��}�(�
+fit_intercept���copy_X���tol�G>������h@N�positive��hZK�coef_�hG)��}�(hJhLhMK��hOhPhh�hX�hYKub����J\g��q?�Q)���? ���?2I�7���c�>?�����Ӿ�������o(u�?��zÝ?�x_��?�]	�n���yc�t�R���Z�?�~��m���Pk.M�����F;�?�>�p%�����LQv��?���ߞη��hBm
+p? }�C_&@�y��-�?q���=�??�!
+w�A@�3��4���^�փ��l       �rank_�h�hR�i8�����R�(Kh�NNNJ����J����K t�bC       ���R��	singular_�hG)��}�(hJhLhMK��hOhPhh�hX�hYKub����c���V@D���B�V@���D�V@'ګ�KV@o��7V@CUo�Y%V@E��D� V@�g�wkK@q1Vȥ�I@������I@X��1�XI@�^�F@��1��F@�8Í�~F@�=}�PF@K�q�e2F@U	�8F@�U�3i�E@P�z�H�C@�ܰ���C@�-�'
+SZ=��V=�S= 6�1�6=' �=0=�RM�,=�P       �
+intercept_�h�h�C��] �]@���R�h#h$ub��e�transform_input�N�memory�NhB�h#h$ub.
