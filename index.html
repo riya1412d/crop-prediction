@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Crop Yield Prediction</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eef7ee;
+            color: #222;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        input,
+        select {
+            padding: 11px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #2e7d32;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 8px;
+            background: #2e7d32;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1b5e20;
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 20px;
+            background: #e8f5e9;
+            border-radius: 10px;
+            text-align: center;
+            color: #1b5e20;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #777;
+            font-size: 13px;
+        }
+
+        @media (max-width: 650px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🌾 Crop Yield Prediction</h1>
+
+    <p class="subtitle">
+        Enter agricultural and environmental information to predict crop yield.
+    </p>
+
+    <form action="/predict" method="POST">
+
+        <div class="form-grid">
+
+            <!-- Crop -->
+            <div class="form-group">
+                <label>Crop</label>
+                <select name="Crop" required>
+                    <option value="Maize">Maize</option>
+                    <option value="Rice">Rice</option>
+                    <option value="Wheat">Wheat</option>
+                    <option value="Barley">Barley</option>
+                </select>
+            </div>
+
+            <!-- Region -->
+            <div class="form-group">
+                <label>Region</label>
+                <select name="Region" required>
+                    <option value="Region_A">Region_A</option>
+                    <option value="Region_B">Region_B</option>
+                    <option value="Region_C">Region_C</option>
+                    <option value="Region_D">Region_D</option>
+                </select>
+            </div>
+
+            <!-- Soil Type -->
+            <div class="form-group">
+                <label>Soil Type</label>
+                <select name="Soil_Type" required>
+                    <option value="Sandy">Sandy</option>
+                    <option value="Loam">Loam</option>
+                    <option value="Clay">Clay</option>
+                </select>
+            </div>
+
+            <!-- Soil pH -->
+            <div class="form-group">
+                <label>Soil pH</label>
+                <input
+                    type="number"
+                    name="Soil_pH"
+                    step="0.01"
+                    value="7.0"
+                    required>
+            </div>
+
+            <!-- Rainfall -->
+            <div class="form-group">
+                <label>Rainfall (mm)</label>
+                <input
+                    type="number"
+                    name="Rainfall_mm"
+                    step="0.1"
+                    value="1000"
+                    required>
+            </div>
+
+            <!-- Temperature -->
+            <div class="form-group">
+                <label>Temperature (°C)</label>
+                <input
+                    type="number"
+                    name="Temperature_C"
+                    step="0.1"
+                    value="25"
+                    required>
+            </div>
+
+            <!-- Humidity -->
+            <div class="form-group">
+                <label>Humidity (%)</label>
+                <input
+                    type="number"
+                    name="Humidity_pct"
+                    step="0.1"
+                    value="60"
+                    required>
+            </div>
+
+            <!-- Fertilizer -->
+            <div class="form-group">
+                <label>Fertilizer Used (kg)</label>
+                <input
+                    type="number"
+                    name="Fertilizer_Used_kg"
+                    step="0.1"
+                    value="150"
+                    required>
+            </div>
+
+            <!-- Irrigation -->
+            <div class="form-group">
+                <label>Irrigation Method</label>
+                <select name="Irrigation" required>
+                    <option value="Drip">Drip</option>
+                    <option value="Sprinkler">Sprinkler</option>
+                    <option value="Flood">Flood</option>
+                </select>
+            </div>
+
+            <!-- Pesticides -->
+            <div class="form-group">
+                <label>Pesticides Used (kg)</label>
+                <input
+                    type="number"
+                    name="Pesticides_Used_kg"
+                    step="0.1"
+                    value="20"
+                    required>
+            </div>
+
+            <!-- Planting Density -->
+            <div class="form-group">
+                <label>Planting Density</label>
+                <input
+                    type="number"
+                    name="Planting_Density"
+                    step="0.1"
+                    value="10"
+                    required>
+            </div>
+
+            <!-- Previous Crop -->
+            <div class="form-group">
+                <label>Previous Crop</label>
+                <select name="Previous_Crop" required>
+                    <option value="Rice">Rice</option>
+                    <option value="Wheat">Wheat</option>
+                    <option value="Maize">Maize</option>
+                    <option value="Barley">Barley</option>
+                </select>
+            </div>
+
+        </div>
+
+        <button type="submit">
+            Predict Crop Yield 🌱
+        </button>
+
+    </form>
+
+    {% if prediction is not none %}
+        <div class="result">
+            🌾 Predicted Yield:
+            <br>
+            {{ prediction }} ton/ha
+        </div>
+    {% endif %}
+
+    <div class="footer">
+        Machine Learning Based Crop Yield Prediction System
+    </div>
+
+</div>
+
+</body>
+</html>
